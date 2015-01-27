@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2015 Alistair Madden <phantommelon@gmail.com>.
  *
@@ -15,12 +16,68 @@
  */
 
 /**
- * Write a description of class Person here.
+ * Defines a generic Person.
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
- * @version (a version number or a date)
+ * @version 1.0
  */
 
 public class Person {
-
+    
+    String name;
+    String address;
+    int numberOfShares;
+    
+    public Person(String name, String address){
+        this.name = name;
+        this.address = address;
+        numberOfShares = 0;
+    }
+    
+    public Person(String name, String address, int numberOfShares) {
+        this.name = name;
+        this.address = address;
+        this.numberOfShares = numberOfShares;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    
+    public void addShares(int numberOfShares) {
+        
+        if(numberOfShares > 0) {
+            this.numberOfShares += numberOfShares;
+        }
+        else {
+            throw(new NumberFormatException("The number of shares was not positive."));
+        }
+    }
+    
+    public void removeShares(int numberOfShares) {
+        
+        if(numberOfShares > 0) {
+            this.numberOfShares -= numberOfShares;
+        }
+        else {
+            throw(new NumberFormatException("The number of shares was not positive."));
+        }
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public String getAddress() {
+        return address;
+    }
+    
+    public int getShares() {
+        return numberOfShares;
+    }
+    
 }
