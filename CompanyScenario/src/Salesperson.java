@@ -16,39 +16,36 @@
  */
 
 /**
- * Describes an Employee who is an Engineer.
+ * Describes an Employee who is a Salesperson.
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
- * @version 1.1
+ * @version 1.0
  */
 
-public class Engineer extends Employee {
+public class Salesperson extends Employee {
+
+    private int sales;
+    private double salary;     //Monthly
     
-    private double salary;     //Monthly.
-    private double hourlyRate;
     
-    public Engineer(String name, String address, int employeeNumber, 
-                    double salary, double hourlyRate) {
+    public Salesperson(String name, String address, int employeeNumber, double salary,
+            int sales) {
         
         super(name, address, employeeNumber);
         this.salary = salary;
-        this.hourlyRate = hourlyRate;
+        this.sales = sales;
     }
-    
-    public Engineer(String name, String address, int employeeNumber, 
-                    int numberOfShares, double salary, double hourlyRate) {
+
+    public Salesperson(String name, String address, int employeeNumber,
+            int numberOfShares, double salary, int sales) {
         
         super(name, address, employeeNumber, numberOfShares);
         this.salary = salary;
-        this.hourlyRate = hourlyRate;
+        this.sales = sales;
     }
     
     public double getSalary() {
         return salary;
-    }
-    
-    public double getHourlyRate() {
-        return hourlyRate;
     }
     
     //Add boundary checks.
@@ -56,8 +53,12 @@ public class Engineer extends Employee {
         this.salary = salary;
     }
     
-    public void setHourlyRate(double hourlyRate) {
-        this.hourlyRate = hourlyRate;
+    public int getSales() {
+        return sales;
+    }
+    
+    public void setSales(int sales) {
+        this.sales = sales;
     }
     
 }

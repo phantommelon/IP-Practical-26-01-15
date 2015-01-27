@@ -19,7 +19,7 @@
  * Describes an Employee of the company.
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
- * @version 1.0
+ * @version 1.1
  */
 
 public class Employee extends Person {
@@ -31,7 +31,7 @@ public class Employee extends Person {
         this.employeeNumber = employeeNumber;
     }
     
-    public Employee(String name, String address, int numberOfShares, int employeeNumber) {
+    public Employee(String name, String address, int employeeNumber, int numberOfShares) {
         super(name, address, numberOfShares);
         this.employeeNumber = employeeNumber;
     }
