@@ -24,9 +24,9 @@
 
 public class Person {
     
-    String name;
-    String address;
-    int numberOfShares;
+    private String name;
+    private String address;
+    private int numberOfShares;
     
     public Person(String name, String address){
         this.name = name;

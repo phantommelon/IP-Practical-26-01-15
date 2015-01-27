@@ -16,32 +16,39 @@
  */
 
 /**
- * Describes an Employee of the company.
+ * Describes an Employee who is an Engineer.
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
  * @version 1.0
  */
 
-public class Employee extends Person {
+public class Engineer extends Employee {
     
-    private int employeeNumber;
+    private double salary;     //Monthly.
+    private double hourlyRate;
     
-    public Employee(String name, String address, int employeeNumber) {
-        super(name, address);
-        this.employeeNumber = employeeNumber;
+    public Engineer(String name, String address, int employeeNumber, 
+                    double salary, double hourlyRate) {
+        
+        super(name, address, employeeNumber);
+        this.salary = salary;
+        this.hourlyRate = hourlyRate;
     }
     
-    public Employee(String name, String address, int numberOfShares, int employeeNumber) {
-        super(name, address, numberOfShares);
-        this.employeeNumber = employeeNumber;
+    public double getSalary() {
+        return salary;
     }
     
-    public void setEmployeeNumber(int employeeNumber) {
-        this.employeeNumber = employeeNumber;
+    public double getHourlyRate() {
+        return hourlyRate;
     }
     
-    public int getEmployeeNumber() {
-        return employeeNumber;
+    //Add boundary checks.
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
     
+    public void setHourlyRate(double hourlyRate) {
+        this.hourlyRate = hourlyRate;
+    }
 }
