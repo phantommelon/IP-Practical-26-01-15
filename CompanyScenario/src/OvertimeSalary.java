@@ -16,48 +16,41 @@
  */
 
 /**
- * Describes an Employee who is an Engineer.
+ * Salary with added overtime.
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
- * @version 1.1
+ * @version (a version number or a date)
  */
 
-public class Engineer extends Employee {
+public class OvertimeSalary {
     
-    private double salary;     //Monthly.
     private double hourlyRate;
+    private double overtimeHours;
     
-    public Engineer(String name, String address, int employeeNumber, 
-                    double salary, double hourlyRate) {
-        
-        super(name, address, employeeNumber);
-        this.salary = salary;
+    public OvertimeSalary(double hourlyRate) {
         this.hourlyRate = hourlyRate;
+        overtimeHours = 0;
     }
     
-    public Engineer(String name, String address, int employeeNumber, 
-                    int numberOfShares, double salary, double hourlyRate) {
-        
-        super(name, address, employeeNumber, numberOfShares);
-        this.salary = salary;
+    public OvertimeSalary(double hourlyRate, double overtimeHours) {
         this.hourlyRate = hourlyRate;
-    }
-    
-    public double getSalary() {
-        return salary;
+        this.overtimeHours = overtimeHours;
     }
     
     public double getHourlyRate() {
         return hourlyRate;
     }
     
-    //Add boundary checks.
-    public void setSalary(double salary) {
-        this.salary = salary;
+    public double getOvertimeHours() {
+        return overtimeHours;
     }
     
     public void setHourlyRate(double hourlyRate) {
         this.hourlyRate = hourlyRate;
+    }
+    
+    public void setOvertimeHours(double overtimeHours) {
+        this.overtimeHours = overtimeHours;
     }
     
 }
