@@ -26,7 +26,8 @@
 public class ContractedWorker extends Employee {
     
     private Salary salary;
-
+    
+    //Refactor for new structure.
     public ContractedWorker(String name, String address, int employeeNumber,
             double salaryAmount, String salaryPaymentSchedule) {
         

@@ -19,29 +19,72 @@
  * Describes an Employee of the company.
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
- * @version 1.1
+ * @version 1.2
  */
 
 public class Employee extends Person {
     
+    private String role;
     private int employeeNumber;
+    private double hoursWorked;
     
-    public Employee(String name, String address, int employeeNumber) {
+    public Employee(String name, String address, String role, int employeeNumber) {
+        
         super(name, address);
+        this.role = role;
         this.employeeNumber = employeeNumber;
+        hoursWorked = 0;
     }
     
-    public Employee(String name, String address, int employeeNumber, int numberOfShares) {
-        super(name, address, numberOfShares);
+    public Employee(String name, String address, String role, int employeeNumber,
+            Share share) {
+        
+        super(name, address, share);
+        this.role = role;
         this.employeeNumber = employeeNumber;
+        hoursWorked = 0;
+    }
+
+    public Employee(String name, String address, String role, int employeeNumber,
+            double hoursWorked) {
+        
+        super(name, address);
+        this.role = role;
+        this.employeeNumber = employeeNumber;
+        this.hoursWorked = hoursWorked;
+    }
+    
+    public Employee(String name, String address, String role, int employeeNumber, 
+            Share share, double hoursWorked) {
+        
+        super(name, address, share);
+        this.role = role;
+        this.employeeNumber = employeeNumber;
+        this.hoursWorked = hoursWorked;
+    }
+    
+    public void setRole(String role) {
+        this.role = role;
     }
     
     public void setEmployeeNumber(int employeeNumber) {
         this.employeeNumber = employeeNumber;
     }
     
+    public void setHoursWorked(double hoursWorked) {
+        this.hoursWorked = hoursWorked;
+    }
+    
+    public String getRole() {
+        return role;
+    }
+    
     public int getEmployeeNumber() {
         return employeeNumber;
+    }
+    
+    public double getHoursWorked() {
+        return hoursWorked;
     }
     
 }

@@ -16,37 +16,35 @@
  */
 
 /**
- * Describes the methods and fields of an Employee's Salary.
+ * Information about a Person's Shares.
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
- * @version 1.0
+ * @version (a version number or a date)
  */
 
-public class Salary {
+public class Share {
     
-    private double amount;
-    private String paymentSchedule;
+    int numberOfShares;
+    double dividend;
     
-    public Salary(double amount, String paymentSchedule) {
-        this.amount = amount;
-        this.paymentSchedule = paymentSchedule;
+    public Share(int numberOfShares, double dividend) {
+        this.numberOfShares = numberOfShares;
+        this.dividend = dividend;
     }
     
-    public double getAmount() {
-        return amount;
+    public int getNumberOfShares() {
+        return numberOfShares;
     }
     
-    public String getPaymentSchedule() {
-        return paymentSchedule;
+    public double getDividend() {
+        return dividend;
     }
     
-    //Boundary conditions definitely a good idea.
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public void setNumberOfShares(int numberOfShares) {
+        this.numberOfShares = numberOfShares;
     }
     
-    public void setPaymentSchedule(String paymentSchedule) {
-        this.paymentSchedule = paymentSchedule;
+    public void setDividend(double dividend) {
+        this.dividend = dividend;
     }
-    
 }

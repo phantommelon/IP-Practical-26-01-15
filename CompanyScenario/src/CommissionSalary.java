@@ -16,46 +16,46 @@
  */
 
 /**
- * Salary with added overtime.
+ * Salary with fixed commission.
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
  * @version 1.0
  */
 
-public class OvertimeSalary extends Salary {
+public class CommissionSalary extends Salary {
     
-    private double hourlyRate;
-    private double overtimeHours;
-    
-    public OvertimeSalary(double amount, String paymentSchedule, double hourlyRate) {
+    private double commission;
+    private int sales;
+
+    public CommissionSalary(double amount, String paymentSchedule, double commission) {
         
         super(amount, paymentSchedule);
-        this.hourlyRate = hourlyRate;
-        overtimeHours = 0;
+        this.commission = commission;
+        sales = 0;
     }
     
-    public OvertimeSalary(double amount, String paymentSchedule, double hourlyRate,
-            double overtimeHours) {
+    public CommissionSalary(double amount, String paymentSchedule, double commission, 
+            int sales) {
         
         super(amount, paymentSchedule);
-        this.hourlyRate = hourlyRate;
-        this.overtimeHours = overtimeHours;
+        this.commission = commission;
+        this.sales = sales;
     }
     
-    public double getHourlyRate() {
-        return hourlyRate;
+    public double getCommission() {
+        return commission;
     }
     
-    public double getOvertimeHours() {
-        return overtimeHours;
+    public int getSales() {
+        return sales;
     }
     
-    public void setHourlyRate(double hourlyRate) {
-        this.hourlyRate = hourlyRate;
+    public void setCommission(double commission) {
+        this.commission = commission;
     }
     
-    public void setOvertimeHours(double overtimeHours) {
-        this.overtimeHours = overtimeHours;
+    public void setSales(int sales) {
+        this.sales = sales;
     }
     
 }
