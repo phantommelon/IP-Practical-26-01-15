@@ -20,27 +20,25 @@
  * 
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
- * @version (a version number or a date)
+ * @version 1.2
  */
 
 public class ContractedWorker extends Employee {
     
     private Salary salary;
     
-    //Refactor for new structure.
-    public ContractedWorker(String name, String address, int employeeNumber,
-            double salaryAmount, String salaryPaymentSchedule) {
+    public ContractedWorker(String name, String address, String role, int employeeNumber,
+            Salary salary) {
         
-        super(name, address, employeeNumber);
-        this.salary = new Salary(salaryAmount, salaryPaymentSchedule);
+        super(name, address, role, employeeNumber);
+        this.salary = salary;
     }
     
-    public ContractedWorker(String name, String address, int employeeNumber,
-            int numberOfShares, double salaryAmount, String salaryPaymentSchedule) {
+    public ContractedWorker(String name, String address, Share share, String role, 
+            int employeeNumber, Salary salary) {
         
-        super(name, address, employeeNumber);
-        this.salary = new Salary(salaryAmount, salaryPaymentSchedule);
-        
+        super(name, address, share, role, employeeNumber);
+        this.salary = salary;
     }
     
     public Salary getSalary() {

@@ -36,8 +36,8 @@ public class Employee extends Person {
         hoursWorked = 0;
     }
     
-    public Employee(String name, String address, String role, int employeeNumber,
-            Share share) {
+    public Employee(String name, String address, Share share, String role, 
+            int employeeNumber) {
         
         super(name, address, share);
         this.role = role;
