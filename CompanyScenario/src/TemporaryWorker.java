@@ -23,7 +23,9 @@
  */
 
 public class TemporaryWorker extends ContractedWorker {
-
+    
+    
+    //TODO add another constructor, make contract end date field.
     public TemporaryWorker(String name, String address, String role, int employeeNumber,
             Salary salary) {
         
