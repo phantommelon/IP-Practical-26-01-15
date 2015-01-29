@@ -19,7 +19,7 @@
  * Describes an Employee of the company.
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
- * @version 1.2
+ * @version 1.3
  */
 
 public class Employee extends Person {

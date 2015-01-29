@@ -16,7 +16,7 @@
  */
 
 /**
- * Describes a worker with a contract of any kind.
+ * Describes an Employee with a contract of any kind.
  * 
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
