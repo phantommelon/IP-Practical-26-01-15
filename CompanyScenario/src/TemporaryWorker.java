@@ -1,4 +1,7 @@
 
+import java.time.*;
+
+
 /*
  * Copyright 2015 Alistair Madden <phantommelon@gmail.com>.
  *
@@ -24,12 +27,20 @@
 
 public class TemporaryWorker extends ContractedWorker {
     
+    LocalDate contractEndDate;
     
-    //TODO add another constructor, make contract end date field.
     public TemporaryWorker(String name, String address, String role, int employeeNumber,
-            Salary salary) {
+            Salary salary, int day, int month, int year) {
         
         super(name, address, role, employeeNumber, checkSalary(salary));
+        contractEndDate = LocalDate.of(year, month, day);
+    }
+    
+    public TemporaryWorker(String name, String address, Share share, String role, 
+            int employeeNumber, Salary salary, int day, int month, int year) {
+        
+        super(name, address, share, role, employeeNumber, checkSalary(salary));
+        contractEndDate = LocalDate.of(year, month, day);
     }
     
     private static Salary checkSalary(Salary salary) {
@@ -44,6 +55,14 @@ public class TemporaryWorker extends ContractedWorker {
         catch(ClassCastException ex) {
             return salary;
         }
+    }
+    
+    public LocalDate getContractEndDate() {
+        return contractEndDate;
+    }
+    
+    public void setContractEndDate(int day, int month, int year) {
+        contractEndDate = LocalDate.of(year, month, day);
     }
 
 }
