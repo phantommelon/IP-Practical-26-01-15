@@ -19,7 +19,7 @@
  * Describes an Employee of the company.
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
- * @version 1.3
+ * @version 1.4
  */
 
 public class Employee extends Person {
@@ -87,4 +87,14 @@ public class Employee extends Person {
         return hoursWorked;
     }
     
+    @Override
+    public String getDescription() {
+        
+        String description = super.getDescription();
+        
+        description += "Employee Number: " + employeeNumber + "\n" + "Role: " + 
+                role + "\n" + "Worked " + hoursWorked + " hours" + "\n";
+        
+        return description;
+    }
 }

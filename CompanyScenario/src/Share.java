@@ -19,13 +19,13 @@
  * Information about a Person's Shares.
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
- * @version (a version number or a date)
+ * @version 1.1
  */
 
 public class Share {
     
-    int numberOfShares;
-    double dividend;
+    private int numberOfShares;
+    private double dividend;
     
     public Share(int numberOfShares, double dividend) {
         this.numberOfShares = numberOfShares;

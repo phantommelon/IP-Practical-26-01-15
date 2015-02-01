@@ -1,7 +1,4 @@
 
-import java.time.*;
-
-
 /*
  * Copyright 2015 Alistair Madden <phantommelon@gmail.com>.
  *
@@ -22,24 +19,26 @@ import java.time.*;
  * Describes a ContractedWorker having an end date to their employment.
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
- * @version 1.0
+ * @version 1.1
  */
+
+import java.time.*;
 
 public class TemporaryWorker extends ContractedWorker {
     
     LocalDate contractEndDate;
     
-    public TemporaryWorker(String name, String address, String role, int employeeNumber,
+    public TemporaryWorker(String name, String address, int employeeNumber,
             Salary salary, int day, int month, int year) {
         
-        super(name, address, role, employeeNumber, checkSalary(salary));
+        super(name, address, "Temporary Worker", employeeNumber, checkSalary(salary));
         contractEndDate = LocalDate.of(year, month, day);
     }
     
-    public TemporaryWorker(String name, String address, Share share, String role, 
-            int employeeNumber, Salary salary, int day, int month, int year) {
+    public TemporaryWorker(String name, String address, Share share, int employeeNumber,
+            Salary salary, int day, int month, int year) {
         
-        super(name, address, share, role, employeeNumber, checkSalary(salary));
+        super(name, address, share, "Temporary Worker", employeeNumber, checkSalary(salary));
         contractEndDate = LocalDate.of(year, month, day);
     }
     
@@ -48,8 +47,8 @@ public class TemporaryWorker extends ContractedWorker {
         try {
             
            salary = (CommissionSalary) salary;
-           throw new IllegalArgumentException("Temporary workers cannot have"
-                   + "a CommissionSalary");
+           throw new IllegalArgumentException("Temporary workers cannot have" + 
+                   "a CommissionSalary");
         }
         
         catch(ClassCastException ex) {
@@ -63,6 +62,17 @@ public class TemporaryWorker extends ContractedWorker {
     
     public void setContractEndDate(int day, int month, int year) {
         contractEndDate = LocalDate.of(year, month, day);
+    }
+    
+    @Override
+    public String getDescription() {
+        
+        String description = super.getDescription();
+        
+        description += "\t" + "- Contract terminates " + contractEndDate.toString() + 
+                "\n";
+        
+        return description;
     }
 
 }

@@ -20,7 +20,7 @@
  * 
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
- * @version 1.2
+ * @version 1.3
  */
 
 public class ContractedWorker extends Employee {
@@ -49,4 +49,13 @@ public class ContractedWorker extends Employee {
         salary = new Salary(salaryAmount, salaryPaymentSchedule);
     }
     
+    @Override
+    public String getDescription() {
+        
+        String description = super.getDescription();
+        
+        description += salary.getPaymentSchedule() + "\n";
+        
+        return description;
+    }
 }

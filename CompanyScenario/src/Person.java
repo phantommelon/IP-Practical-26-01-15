@@ -19,7 +19,7 @@
  * Defines a generic Person.
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
- * @version 1.0
+ * @version 1.3
  */
 
 public class Person {
@@ -48,6 +48,9 @@ public class Person {
         this.address = address;
     }
     
+    public void setShare(Share share) {
+        this.share = share;
+    }
     
     public String getName() {
         return name;
@@ -57,4 +60,22 @@ public class Person {
         return address;
     }
     
+    public Share getShare() {
+        return share;
+    }
+    
+    public String getDescription() {
+        
+        String description = "Name: " + name + "\n" + "Address: " + address;
+        
+        if(!(share == null)) {
+            description = description + "\n" + "Number of Shares: " + 
+                    share.getNumberOfShares() + "Shareholder";
+        }
+        
+        description += "\n";
+        
+        return description;
+    }
+ 
 }
