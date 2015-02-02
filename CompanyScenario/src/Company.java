@@ -19,7 +19,7 @@
  * Describes the people within the company, and methods to analyse them.
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
- * @version 1.0
+ * @version 1.1
  */
 
 import java.util.ArrayList;
@@ -69,11 +69,13 @@ public class Company {
                 }
             }
             
-            System.out.println("Surname: " + surname + "\n" + "First Name(s):");
+            System.out.print("Surname: " + surname + "\n" + "First Name(s):");
             
             for(String name : firstNames) {
                 System.out.print(" " + name);
             }
+            
+            System.out.println("");
             
             if(!(person.getShare() == null)) {
                 System.out.println("Dividend Due: " + person.getShare().getDividend());
@@ -88,7 +90,7 @@ public class Company {
                 ContractedWorker employee = (ContractedWorker) person;
                 
                 System.out.println("Payment Due: " + employee.getSalary().getAmount() +
-                        employee.getSalary().getPaymentSchedule());
+                        " " + employee.getSalary().getPaymentSchedule());
             }
         }
     }

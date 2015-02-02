@@ -20,7 +20,7 @@
  * 
  * 
  * @author Alistair Madden <phantommelon@gmail.com> 
- * @version 1.3
+ * @version 1.4
  */
 
 public class ContractedWorker extends Employee {
@@ -54,7 +54,8 @@ public class ContractedWorker extends Employee {
         
         String description = super.getDescription();
         
-        description += salary.getPaymentSchedule() + "\n";
+        description += "Paid: " + Character.toUpperCase(salary.getPaymentSchedule().charAt(0)) + 
+                salary.getPaymentSchedule().substring(1) + "\n";
         
         return description;
     }
