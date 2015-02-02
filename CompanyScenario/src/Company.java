@@ -79,6 +79,11 @@ public class Company {
                 System.out.println("Dividend Due: " + person.getShare().getDividend());
             }
             
+            if(person instanceof Employee) {
+                Employee employee = (Employee) person;
+                System.out.println("Employee Number: " + employee.getEmployeeNumber());
+            }
+            
             if(person instanceof ContractedWorker) {
                 ContractedWorker employee = (ContractedWorker) person;
                 
