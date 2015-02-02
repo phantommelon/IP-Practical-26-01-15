@@ -23,6 +23,7 @@
  */
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Company {
     
@@ -52,11 +53,39 @@ public class Company {
             System.out.println(person.getDescription());
         }
     }
-}
-
-class test {
-    public static void main(String args[]) {
-        Person person = new Employee("A", "B", "C", 20);
-        System.out.println(person);
+    
+    public void calculatePayment() {
+        for(Person person : associatedPersons) {
+            
+            ArrayList<String> names = new ArrayList<>(Arrays.asList(person.getName().split(" ")));
+            
+            String surname = names.get(names.size() - 1);
+            
+            ArrayList<String> firstNames = new ArrayList();
+            
+            for(String name : names) {
+                if(!name.equals(surname)) {
+                    firstNames.add(name);
+                }
+            }
+            
+            System.out.println("Surname: " + surname + "\n" + "First Name(s):");
+            
+            for(String name : firstNames) {
+                System.out.print(" " + name);
+            }
+            
+            if(!(person.getShare() == null)) {
+                System.out.println("Dividend Due: " + person.getShare().getDividend());
+            }
+            
+            if(person instanceof ContractedWorker) {
+                ContractedWorker employee = (ContractedWorker) person;
+                
+                System.out.println("Payment Due: " + employee.getSalary().getAmount() +
+                        employee.getSalary().getPaymentSchedule());
+            }
+        }
     }
+    
 }
